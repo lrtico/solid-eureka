@@ -51,9 +51,6 @@ Being a single-page app with a router, frontend endpoints differ from the backen
 
 For more information on endpoints, usage and required parameters, see the [documentation](https://github.com/Botmasher/reactnd-readable/blob/master/api-server/README.md) in the `./api-server` subdirectory.
 
-## Tasks and ideas
-Check out the task planning and implementation checklist in the project's [TODO.md](https://github.com/Botmasher/reactnd-readable/blob/master/frontend/TODO.md).
-
 ## Frontend Architecture
 
 ### Components
