@@ -15,7 +15,7 @@ class ListPosts extends Component {
 
   render() {
     const { posts } = this.props
-    console.log("post", posts)
+    // console.log("post", posts)
     return (
       <div>
         {posts.map(post => (

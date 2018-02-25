@@ -20,7 +20,7 @@ class PostDetail extends Component {
       this.props.fetchAllPosts()
       this.props.fetchCommentForPost(this.props.match.params.postId)
       const labels = document.querySelectorAll('.button__toggle')
-      console.log("buttons", labels)
+      // console.log("buttons", labels)
       for (let label of labels) {
         label.classList.remove('button__toggle--on')
         label.classList.add('button__toggle--disabled')
@@ -38,7 +38,7 @@ class PostDetail extends Component {
     const { post, comments, votePost, fetchAllPosts } = this.props
     const marginBottom18px = {marginBottom: 18}
 // console.log("props", this.props)
-    console.log("Up votes", post)
+    // console.log("Up votes", post)
     return (
       <div>
         {post && (
@@ -101,7 +101,6 @@ class PostDetail extends Component {
           </section>
         )}
         <div className="add-comment">
-          {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
           <Link to={`/${post.category}/${post.id}/comment`}>
             <button className="button--white" style={marginBottom18px}>Add comment</button>
           </Link>

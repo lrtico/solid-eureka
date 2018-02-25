@@ -13,6 +13,7 @@ import EditPost from './post/EditPost';
 import ToggleButton from './buttons/ToggleButton';
 import EditComment from './comment/EditComment';
 import NewComment from './comment/NewComment';
+import NotFound from './NotFound';
 import MaterialIcon from 'react-google-material-icons';
 import ScrollTop from '../ScrollTop';
 import Logo from './Logo';
@@ -32,26 +33,13 @@ class App extends Component {
       });
     }
 
-  // handleClick = (event) => {
-    // event.target.classList.toggle('button__toggle--on');
-    // console.log("wax on")
-    // const button = event.target
-    // const allButtons = document.getElementsByClassName('button__toggle')
-    // console.log("All buttons", allButtons)
-    // allButtons[0].classList.remove('button__toggle--on')
-    // console.log("this", button)
-    // const buttonParent = button.parentNode.getElementByClassName("sort-buttons")
-    // console.log ("parent", buttonParent.children)
-    // const all
-    // allButtons.children.classList.remove("button__toggle--on")
-    // document.getElementsByClassName("button__toggle").classList.remove("button__toggle--on")
-
-    // button.classList.add("button__toggle--on")
-  // }
+  componentDidMount() {
+    this.props.fetchCategories()
+  }
 
   render() {
-    // console.log("categories", this.props.categories);
     const { categories, sortPost } = this.props
+    console.log("categories", this.props.categories);
     return (
       <div className="App">
         <Header />
@@ -76,9 +64,10 @@ class App extends Component {
         <Route exact path="/new" component={NewPost} />
         <Route exact path="/:category" component={ListPosts} />
         <Route exact path="/:category/:postId" component={PostDetail} />
-        <Route path="/:category/:postId/edit" component={EditPost} />
-        <Route path="/:category/:postId/comment" component={NewComment} />
-        <Route path="/:category/:postId/:commentId/edit" component={EditComment} />
+        <Route exact path="/:category/:postId/edit" component={EditPost} />
+        <Route exact path="/:category/:postId/comment" component={NewComment} />
+        <Route exact path="/:category/:postId/:commentId/edit" component={EditComment} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </div>
     )

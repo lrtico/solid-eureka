@@ -94,6 +94,10 @@ div.logo {
   max-width: 1200px;
 }
 
+.post_preview > p > i {
+  color: #999;
+}
+
 .post_body {
   font-size: 18px;
   font-size: 1.8rem;
@@ -304,6 +308,12 @@ input.button--white {
 
 .comments__count {
   font-weight: normal;
+}
+
+.post-comment-count {
+  color: #999;
+  font-size: 18px;
+  position: absolute;
 }
 
 .create-controls {

@@ -6,12 +6,14 @@ import * as actions from '../../actions/'
 import UpvoteButton from '../buttons/UpvoteButton';
 import DownVoteButton from '../buttons/DownVoteButton';
 import EditButton from '../buttons/EditButton';
+import MaterialIcon from 'react-google-material-icons';
 
 class SinglePost extends Component {
+
   componentDidMount() {
-  this.props.fetchCommentForPost(this.props.post.id)
+    this.props.fetchCommentForPost(this.props.post.id)
     const labels = document.querySelectorAll('.button__toggle')
-    console.log("buttons", labels)
+    // console.log("buttons", labels)
     for (let label of labels) {
       label.classList.remove('button__toggle--disabled')
     }
@@ -35,7 +37,14 @@ class SinglePost extends Component {
             <p className="post__author"><em>{post.author}</em></p>
             <Link to={`/${post.category}/${post.id}`}>
               <div className="post_preview">
-                <p>{post.title}</p>
+                <p>
+                  {post.title}
+                  &nbsp;
+                  <MaterialIcon
+                  icon="comment"
+                  size={20}/>
+                  <span className="post-comment-count">{post.commentCount}</span>
+                </p>
               </div>
             </Link>
             <div className="flex--vertical-center">
