@@ -79,9 +79,3 @@ Following the [project rubric](https://review.udacity.com/#!/rubrics/1017/view),
 
 #### Post/Comment UI
 Posts and comments, in all views where they are displayed, should display their current score and should have controls to increment or decrement the voteScore for the object. Posts should display the number of comments associated with the post.
-
-### Component breakdown
-The React frontend is divided into display components (`./frontend/src/components`) - either stateless functional or controlled - and container components (`./frontend/src/containers`) that connect to the Redux store.
-
-### Utils
-Additional functions have been written and stored within `./frontend/src/utils`, crucially including functions that fetch backend routes.
