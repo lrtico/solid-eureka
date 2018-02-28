@@ -21,8 +21,6 @@ class PostComment extends Component {
     })
   }
 
-  
-
   render() {
     return (
       <div>

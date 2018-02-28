@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   render() {
-    const { categories, sortPost } = this.props
+    const { categories, sortPost, post } = this.props
     console.log("categories", this.props.categories);
     return (
       <div className="App">
@@ -69,6 +69,7 @@ class App extends Component {
         <Route exact path="/:category/:postId/:commentId/edit" component={EditComment} />
         <Route path="*" component={NotFound} />
       </Switch>
+      <ScrollTop scrollToTheTop={this.scrollIt} />
     </div>
     )
   }

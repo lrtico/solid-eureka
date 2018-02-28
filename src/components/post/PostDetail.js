@@ -11,6 +11,7 @@ import DeleteButton from '../buttons/DeleteButton';
 import EditButton from '../buttons/EditButton';
 import UpvoteButton from '../buttons/UpvoteButton';
 import DownVoteButton from '../buttons/DownVoteButton';
+import NotFound from '../NotFound';
 // import Comment from './Comment';
 
 
@@ -36,6 +37,7 @@ class PostDetail extends Component {
 
   render() {
     const { post, comments, votePost, fetchAllPosts } = this.props
+    if (!post) return <NotFound />
     const marginBottom18px = {marginBottom: 18}
 // console.log("props", this.props)
     // console.log("Up votes", post)
